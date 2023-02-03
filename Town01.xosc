@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Authors: J. Felipe Arango.
+Last mod: J. Felipe Arango. 24/11/2022
+-->
+<OpenSCENARIO>
+  <FileHeader revMajor="1" revMinor="0" date="2022-04-20T12:00:00" description="CARLA: Town01 - Rodri IV 2023" author="J Felipe Arango"/>
+  <ParameterDeclarations>
+    <ParameterDeclaration name="vut_name" parameterType="string" value="ego_vehicle" /> 
+    <ParameterDeclaration name="vut_x" parameterType="double" value="154.045"/>    
+    <ParameterDeclaration name="vut_y" parameterType="double" value="13.405"/>
+    <ParameterDeclaration name="vut_z" parameterType="double" value="3.00"/>
+    <ParameterDeclaration name="vut_heading" parameterType="double" value="1.570"/>
+
+    <!--  ############################  Target 1 ############################   -->
+    <ParameterDeclaration name="target_name_1" parameterType="string" value="target_vehicle_1" /> 
+    <ParameterDeclaration name="target_speed_1" parameterType="double" value="9.5"/>
+    <ParameterDeclaration name="target_x_1" parameterType="double" value="185.815"/>
+    <ParameterDeclaration name="target_y_1" parameterType="double" value="55.170"/>
+    <ParameterDeclaration name="target_z_1" parameterType="double" value="3.0"/>
+    <ParameterDeclaration name="target_heading_1" parameterType="double" value="3.140"/>
+    <ParameterDeclaration name="p_ini_x_1" parameterType="double" value="154.045"/>  
+    <ParameterDeclaration name="p_ini_y_1" parameterType="double" value="17.405"/>
+    <ParameterDeclaration name="travel_distance_1" parameterType="double" value="500.0"/>
+
+    <!--  ############################  Target 2 ############################   -->
+    <ParameterDeclaration name="target_name_2" parameterType="string" value="target_vehicle_2" /> 
+    <ParameterDeclaration name="target_speed_2" parameterType="double" value="9.0"/>
+    <ParameterDeclaration name="target_x_2" parameterType="double" value="230.896"/>
+    <ParameterDeclaration name="target_y_2" parameterType="double" value="55.170"/>
+    <ParameterDeclaration name="target_z_2" parameterType="double" value="3.0"/>
+    <ParameterDeclaration name="target_heading_2" parameterType="double" value="3.140"/>
+    <ParameterDeclaration name="p_ini_x_2" parameterType="double" value="154.045"/>  
+    <ParameterDeclaration name="p_ini_y_2" parameterType="double" value="17.405"/>
+    <ParameterDeclaration name="travel_distance_2" parameterType="double" value="100.0"/>
+
+    <!--  ############################  Target 3 ############################   -->
+    <ParameterDeclaration name="target_name_3" parameterType="string" value="target_vehicle_3" /> 
+    <!-- Initial and final poses -->
+    <ParameterDeclaration name="target_ini_x_3" parameterType="double" value="92.5"/>
+    <ParameterDeclaration name="target_ini_y_3" parameterType="double" value="91.0"/>
+    <ParameterDeclaration name="target_ini_heading_3" parameterType="double" value="-1.570"/>
+    <ParameterDeclaration name="target_final_x_3" parameterType="double" value="-2.0"/>
+    <ParameterDeclaration name="target_final_y_3" parameterType="double" value="60.5"/>
+    <!-- Synchronized arrival at intersection -->
+    <ParameterDeclaration name="vut_arrival_x_3" parameterType="double" value="103.0"/>  
+    <ParameterDeclaration name="vut_arrival_y_3" parameterType="double" value="55.0"/>
+    <ParameterDeclaration name="target_arrival_x_3" parameterType="double" value="92.0"/>  
+    <ParameterDeclaration name="target_arrival_y_3" parameterType="double" value="63.8"/>
+    <ParameterDeclaration name="target_final_speed_3" parameterType="double" value="8.33"/>
+
+    <!--  ############################  Target 4 ############################   -->
+    <ParameterDeclaration name="target_name_4" parameterType="string" value="target_vehicle_4" /> 
+    <ParameterDeclaration name="target_speed_4" parameterType="double" value="9.5"/>
+    <ParameterDeclaration name="target_x_4" parameterType="double" value="92.432"/>
+    <ParameterDeclaration name="target_y_4" parameterType="double" value="155.84"/>
+    <ParameterDeclaration name="target_z_4" parameterType="double" value="3.0"/>
+    <ParameterDeclaration name="target_heading_4" parameterType="double" value="-1.570"/>
+    <ParameterDeclaration name="p_ini_x_4" parameterType="double" value="88.390"/>  
+    <ParameterDeclaration name="p_ini_y_4" parameterType="double" value="95.170"/>
+    <ParameterDeclaration name="travel_distance_4" parameterType="double" value="100.0"/>
+
+  </ParameterDeclarations>
+  <CatalogLocations/>
+  <RoadNetwork>
+    <LogicFile filepath="Town01"/>
+  </RoadNetwork>
+  <Entities>
+    <ScenarioObject name="$vut_name">
+      <Vehicle name="vehicle.audi.a2" vehicleCategory="car">
+        <Performance maxSpeed="0.0" maxAcceleration="0" maxDeceleration="0.0"/>
+        <BoundingBox>
+          <Center x="0.0" y="0.0" z="0.9"/>
+          <Dimensions width="2.1" length="4.5" height="1.8"/>
+        </BoundingBox>
+        <Axles>
+          <FrontAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+          <RearAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+        </Axles>
+        <Properties>
+          <Property name="type" value="ego_vehicle"/>
+          <Property name="color" value="0,0,255"/>
+        </Properties>
+      </Vehicle>
+    </ScenarioObject>
+    <!--  ############################  Target 1 ############################   -->
+    <ScenarioObject name="$target_name_1">
+      <Vehicle name="vehicle.bmw.grandtourer" vehicleCategory="car">
+        <Performance maxSpeed="0.0" maxAcceleration="0" maxDeceleration="0.0"/>
+        <BoundingBox>
+          <Center x="0.0" y="0.0" z="0.9"/>
+          <Dimensions width="2.1" length="4.5" height="1.8"/>
+        </BoundingBox>
+        <Axles>
+          <FrontAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+          <RearAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+        </Axles>
+        <Properties>
+          <Property name="type" value="simulation"/>
+          <Property name="color" value="255,255,255"/>
+        </Properties>
+      </Vehicle>
+    </ScenarioObject>
+    <!--  ############################  Target 2 ############################   -->
+    <ScenarioObject name="$target_name_2">
+      <Vehicle name="vehicle.bmw.grandtourer" vehicleCategory="car">
+        <Performance maxSpeed="0.0" maxAcceleration="0" maxDeceleration="0.0"/>
+        <BoundingBox>
+          <Center x="0.0" y="0.0" z="0.9"/>
+          <Dimensions width="2.1" length="4.5" height="1.8"/>
+        </BoundingBox>
+        <Axles>
+          <FrontAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+          <RearAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+        </Axles>
+        <Properties>
+          <Property name="type" value="simulation"/>
+          <Property name="color" value="255,255,255"/>
+        </Properties>
+      </Vehicle>
+    </ScenarioObject>
+    <!--  ############################  Target 3 ############################   -->
+    <ScenarioObject name="$target_name_3">
+      <Vehicle name="vehicle.bmw.grandtourer" vehicleCategory="car">
+        <Performance maxSpeed="0.0" maxAcceleration="0" maxDeceleration="0.0"/>
+        <BoundingBox>
+          <Center x="0.0" y="0.0" z="0.9"/>
+          <Dimensions width="2.1" length="4.5" height="1.8"/>
+        </BoundingBox>
+        <Axles>
+          <FrontAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+          <RearAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+        </Axles>
+        <Properties>
+          <Property name="type" value="simulation"/>
+          <Property name="color" value="255,255,255"/>
+        </Properties>
+      </Vehicle>
+    </ScenarioObject>
+    <!--  ############################  Target 4 ############################   -->
+    <ScenarioObject name="$target_name_4">
+      <Vehicle name="vehicle.bmw.grandtourer" vehicleCategory="car">
+        <Performance maxSpeed="0.0" maxAcceleration="0" maxDeceleration="0.0"/>
+        <BoundingBox>
+          <Center x="0.0" y="0.0" z="0.9"/>
+          <Dimensions width="2.1" length="4.5" height="1.8"/>
+        </BoundingBox>
+        <Axles>
+          <FrontAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+          <RearAxle maxSteering="0.0" wheelDiameter="0.0" trackWidth="0.0" positionX="0.0" positionZ="0.0"/>
+        </Axles>
+        <Properties>
+          <Property name="type" value="simulation"/>
+          <Property name="color" value="255,255,255"/>
+        </Properties>
+      </Vehicle>
+    </ScenarioObject>
+    
+
+  </Entities>
+  <Storyboard>
+    <Init>
+      <Actions>
+        <GlobalAction>
+          <EnvironmentAction>
+            <Environment name="Environment1">	
+              <TimeOfDay animation="false" dateTime="2019-06-25T12:00:00"/>
+              <Weather cloudState="free"> <!-- cloudy ; free ; overcast  ; rainy  ;  skyOff -->
+                <Sun intensity="0.85" azimuth="0" elevation="1.31"/>  <!-- day (elevation=1.31) ; night (elevation=-1.31) -->
+                <Fog visualRange="100000.0"/>   <!-- clear (visualRange=100000.0) ; foggy (visualRange=20.0) -->
+                <Precipitation precipitationType="dry" intensity="0.2"/>  <!-- dry ; rain ; snow -->
+              </Weather>
+              <RoadCondition frictionScaleFactor="1.0"/>
+            </Environment>
+          </EnvironmentAction>
+        </GlobalAction>
+        <Private entityRef="$vut_name">
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition x="$vut_x" y="$vut_y" z="$vut_z" h="$vut_heading"/>   
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+          <PrivateAction>
+            <ControllerAction>
+              <AssignControllerAction>
+                <Controller name="HeroAgent">
+                  <Properties>
+                    <Property name="module" value="external_control"/>
+                  </Properties>
+                </Controller>
+              </AssignControllerAction>
+              <OverrideControllerValueAction>
+                <Throttle value="0" active="false"/>
+                <Brake value="0" active="false"/>
+                <Clutch value="0" active="false"/>
+                <ParkingBrake value="0" active="false"/>
+                <SteeringWheel value="0" active="false"/>
+                <Gear number="0" active="false"/>
+              </OverrideControllerValueAction>
+            </ControllerAction>
+          </PrivateAction>
+        </Private>
+        <!--  ############################  Target 1 ############################   -->
+        <Private entityRef="$target_name_1">
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition x="$target_x_1" y="$target_y_1" z="$target_z_1" h="$target_heading_1"/>  
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+        </Private>
+        <!--  ############################  Target 2 ############################   -->
+        <Private entityRef="$target_name_2">
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition x="$target_x_2" y="$target_y_2" z="$target_z_2" h="$target_heading_2"/>  
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+        </Private>
+        <!--  ############################  Target 3 ############################   -->
+        <Private entityRef="$target_name_3">
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition x="$target_ini_x_3" y="$target_ini_y_3" z="3.00" h="$target_ini_heading_3"/> 
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+          <PrivateAction>
+            <ControllerAction>
+              <AssignControllerAction>
+                <Controller name="AdversaryAgent_3">
+                  <Properties>
+                    <Property name="module" value="npc_vehicle_control"/>
+                  </Properties>
+                </Controller>
+              </AssignControllerAction>
+              <OverrideControllerValueAction>
+                <Throttle value="0" active="false"/>
+                <Brake value="0" active="false"/>
+                <Clutch value="0" active="false"/>
+                <ParkingBrake value="0" active="false"/>
+                <SteeringWheel value="0" active="false"/>
+                <Gear number="0" active="false"/>
+              </OverrideControllerValueAction>
+            </ControllerAction>
+          </PrivateAction>
+        </Private>
+        <!--  ############################  Target 4 ############################   -->
+        <Private entityRef="$target_name_4">
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition x="$target_x_4" y="$target_y_4" z="$target_z_4" h="$target_heading_4"/>  
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+        </Private>
+
+      </Actions>
+    </Init>
+    <Story name="MyStory">
+      <Act name="Rodri_Scenario">
+        <!--  ############################  Target 1 ############################   -->
+        <ManeuverGroup name="TargetManeuverSequence_1" maximumExecutionCount="1">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef="$target_name_1"/>
+          </Actors>
+          <Maneuver name="TargetKeepsVelocity_then_TargetStops">
+            <Event name="TargetKeepsVelocity_1" priority="overwrite">
+              <Action name="SpeedUp">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="$travel_distance_1" dynamicsDimension="distance"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="$target_speed_1"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_TargetKeepsVelocity" delay="0" conditionEdge="rising">
+                    <ByEntityCondition>
+                      <TriggeringEntities triggeringEntitiesRule="any">
+                        <EntityRef entityRef="$vut_name"/>
+                      </TriggeringEntities>
+                      <EntityCondition>
+                        <ReachPositionCondition tolerance="1.0">
+                          <Position>
+                            <WorldPosition x="$p_ini_x_1" y="$p_ini_y_1" z="0" h="0"/> 
+                          </Position>
+                        </ReachPositionCondition>
+                      </EntityCondition>
+                    </ByEntityCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="TargetStops_1" priority="overwrite">
+              <Action name="Brake">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="10" dynamicsDimension="time"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="0.0"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_TargetStops" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <StoryboardElementStateCondition storyboardElementType="event" storyboardElementRef="TargetKeepsVelocity_1" state="endTransition"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="TargetReturn_1" priority="overwrite">
+              <Action name="Return_to_ini">
+                <PrivateAction>
+                  <TeleportAction>
+                    <Position>
+                      <WorldPosition x="$target_x_1" y="$target_y_1" z="$target_z_1" h="$target_heading_1"/>   
+                    </Position>
+                  </TeleportAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_Return" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <StoryboardElementStateCondition storyboardElementType="event" storyboardElementRef="TargetStops_1" state="endTransition"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+        </ManeuverGroup>
+        <!--  ############################  Target 2 ############################   -->
+        <ManeuverGroup name="TargetManeuverSequence_2" maximumExecutionCount="1">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef="$target_name_2"/>
+          </Actors>
+          <Maneuver name="TargetKeepsVelocity_then_TargetStops">
+            <Event name="TargetKeepsVelocity_2" priority="overwrite">
+              <Action name="SpeedUp">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="$travel_distance_2" dynamicsDimension="distance"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="$target_speed_2"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_TargetKeepsVelocity" delay="0" conditionEdge="rising">
+                    <ByEntityCondition>
+                      <TriggeringEntities triggeringEntitiesRule="any">
+                        <EntityRef entityRef="$vut_name"/>
+                      </TriggeringEntities>
+                      <EntityCondition>
+                        <ReachPositionCondition tolerance="1.0">
+                          <Position>
+                            <WorldPosition x="$p_ini_x_2" y="$p_ini_y_2" z="0" h="0"/> 
+                          </Position>
+                        </ReachPositionCondition>
+                      </EntityCondition>
+                    </ByEntityCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="TargetStops_2" priority="overwrite">
+              <Action name="Brake">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="0.1" dynamicsDimension="time"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="0.0"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_TargetStops" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <StoryboardElementStateCondition storyboardElementType="event" storyboardElementRef="TargetKeepsVelocity_2" state="endTransition"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="TargetReturn_2" priority="overwrite">
+              <Action name="Return_to_ini">
+                <PrivateAction>
+                  <TeleportAction>
+                    <Position>
+                      <WorldPosition x="$target_x_2" y="$target_y_2" z="$target_z_2" h="$target_heading_2"/>   
+                    </Position>
+                  </TeleportAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_Return" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <StoryboardElementStateCondition storyboardElementType="event" storyboardElementRef="TargetStops_2" state="endTransition"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+        </ManeuverGroup>
+        <!--  ############################  Target 3 ############################   -->
+        <ManeuverGroup maximumExecutionCount="1" name="ManeuverSequence_3">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef="$target_name_3"/>
+          </Actors>
+          <Maneuver name="SynchronizeManeuver_3">
+            <Event name="RouteCreation_3" priority="overwrite">
+              <Action name="RouteCreation">
+                <PrivateAction>
+                  <RoutingAction>
+                    <AcquirePositionAction>
+                      <Position>
+                        <WorldPosition x="$target_final_x_3" y="$target_final_y_3" z="0.00" h="0.00"/>
+                      </Position>
+                    </AcquirePositionAction>
+                  </RoutingAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="StartCondition" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <SimulationTimeCondition value="0.1" rule="greaterThan"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="ActorSynchronization_3" priority="overwrite">
+              <Action name="ActorSynchronization">
+                <PrivateAction>
+                  <SynchronizeAction masterEntityRef="$vut_name">
+                    <TargetPositionMaster>
+                      <WorldPosition x="$vut_arrival_x_3" y="$vut_arrival_y_3" z="0.0" h="0.00"/>
+                    </TargetPositionMaster>
+                    <TargetPosition>
+                      <WorldPosition x="$target_arrival_x_3" y="$target_arrival_y_3" z="0.0" h="0.00"/>
+                    </TargetPosition>
+                    <FinalSpeed>
+                      <RelativeSpeedToMaster value='3' speedTargetValueType='delta'/>
+                    </FinalSpeed>
+                  </SynchronizeAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="StartCondition" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <SimulationTimeCondition value="0.1" rule="greaterThan"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+        </ManeuverGroup>
+        <!--  ############################  Target 4 ############################   -->
+        <ManeuverGroup name="TargetManeuverSequence_4" maximumExecutionCount="1">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef="$target_name_4"/>
+          </Actors>
+          <Maneuver name="TargetKeepsVelocity_then_TargetStops">
+            <Event name="TargetKeepsVelocity_4" priority="overwrite">
+              <Action name="SpeedUp">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="$travel_distance_4" dynamicsDimension="distance"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="$target_speed_4"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_TargetKeepsVelocity" delay="0" conditionEdge="rising">
+                    <ByEntityCondition>
+                      <TriggeringEntities triggeringEntitiesRule="any">
+                        <EntityRef entityRef="$vut_name"/>
+                      </TriggeringEntities>
+                      <EntityCondition>
+                        <ReachPositionCondition tolerance="1.0">
+                          <Position>
+                            <WorldPosition x="$p_ini_x_4" y="$p_ini_y_4" z="0" h="0"/> 
+                          </Position>
+                        </ReachPositionCondition>
+                      </EntityCondition>
+                    </ByEntityCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="TargetStops_4" priority="overwrite">
+              <Action name="Brake">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="0.1" dynamicsDimension="time"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="0.0"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_TargetStops" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <StoryboardElementStateCondition storyboardElementType="event" storyboardElementRef="TargetKeepsVelocity_4" state="endTransition"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="TargetReturn_4" priority="overwrite">
+              <Action name="Return_to_ini">
+                <PrivateAction>
+                  <TeleportAction>
+                    <Position>
+                      <WorldPosition x="$target_x_4" y="$target_y_4" z="$target_z_4" h="$target_heading_4"/>   
+                    </Position>
+                  </TeleportAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Ini_Return" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                      <StoryboardElementStateCondition storyboardElementType="event" storyboardElementRef="TargetStops_4" state="endTransition"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+        </ManeuverGroup>
+
+        <StartTrigger>
+          <ConditionGroup>
+            <Condition name="Ini_Scenario" delay="0" conditionEdge="rising">
+              <ByValueCondition>
+                <SimulationTimeCondition value="0" rule="greaterThan"/>
+              </ByValueCondition>
+            </Condition>
+          </ConditionGroup>
+        </StartTrigger>
+        <StopTrigger>
+          <ConditionGroup>
+            <Condition name="End_Scensario" delay="0" conditionEdge="rising">
+              <ByValueCondition>
+                <StoryboardElementStateCondition storyboardElementType="event" storyboardElementRef="TargetReturn_4" state="completeState"/>
+              </ByValueCondition>
+            </Condition>
+          </ConditionGroup>
+        </StopTrigger>
+      </Act>
+    </Story>
+    <StopTrigger>
+      <ConditionGroup>
+        <Condition name="EndScenario" delay="0" conditionEdge="rising">
+          <ByValueCondition>
+            <StoryboardElementStateCondition storyboardElementType="story" storyboardElementRef="MyStory" state="completeState"/>
+          </ByValueCondition>
+        </Condition>
+      </ConditionGroup>
+    </StopTrigger>
+  </Storyboard>
+</OpenSCENARIO>
